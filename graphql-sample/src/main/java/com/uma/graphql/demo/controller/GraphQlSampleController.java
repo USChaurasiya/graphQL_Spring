@@ -89,7 +89,7 @@ public class GraphQlSampleController {
 	        
 	        return executionResult.getData();
 	    }
-	    
+	   
 	    //Just mocking error handling
 	    private Object extractErrorResponse(ExecutionResult executionResult) {
 	        Gson gson = new Gson();
