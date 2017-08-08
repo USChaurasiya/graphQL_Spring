@@ -25,7 +25,7 @@ public class PersonQuery {
     @GraphQLQuery(name = "greeting")
     public String getGreeting(@GraphQLArgument(name = "Person", description = "Person to greet.")
                               final Person person){
-        return "Hello "+ person.getFirstName()+"!";
+        return "Hello "+ person.getFirstName()+" "+person.getLastName()+"!";
     }
 
 
@@ -59,14 +59,34 @@ public class PersonQuery {
         List<Person> result = new ArrayList<>();
 
         Person p1 = new Person();
-        p1.setFirstName("John");
-        p1.setLastName("Doe");
+        p1.setFirstName("Uma Shankar");
+        p1.setLastName("Jaiswal");
         result.add(p1);
 
         Person p2 = new Person();
-        p2.setFirstName("Jane");
-        p2.setLastName("Doe");
+        p2.setFirstName("Hamid");
+        p2.setLastName("Noori");
         result.add(p2);
+        
+        Person p3 = new Person();
+        p3.setFirstName("Anuj");
+        p3.setLastName("Sachan");
+        result.add(p3);
+        
+        Person p4 = new Person();
+        p4.setFirstName("Amit");
+        p4.setLastName("Sharma");
+        result.add(p4);
+        
+      /*  Person p5 = new Person();
+        p5.setFirstName("Khan");
+        p5.setLastName("Suhail");
+        result.add(p5);
+        
+        Person p6 = new Person();
+        p6.setFirstName("Himanshu");
+        p6.setLastName("Gautam");
+        result.add(p6);*/
 
         return result.stream().limit(count).collect(Collectors.toList());
     }
